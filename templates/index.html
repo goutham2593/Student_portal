@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+   <body>
+	   <div class="w-75 p-3 m-5 mx-auto" style="background-color: beige;">      <p>
+         <h1>{{ msg }}</h1>
+      </p></div>
+	   	   <div class="w-75 p-3 m-2 mx-auto bg-danger">      <p>
+			   <br>
+         <a href="/addrecord"><button class="btn-light p-3 m-2">Add Record</button></a>
+	     <a href="/viewall"><button class="btn-light p-3 m-2">View All Record</button></a>
+		 <a href="/updaterecord"><button class="btn-light p-3 m-2">Update Record</button></a>
+      </p></div>
+      <div class="mx-auto w-75 m-5 p-5" style="background-color: beige;">
+
+      <h2>All Records</h2><br>
+		  <table class="table">
+		  <tr>
+			  <th>ID</th>
+			<th>Company Name</th>
+			<th>Phone Number</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>Action</th>
+	      </tr>
+		{% for company in companies %}
+			  <tr>
+			  <td>{{ company[0] }}</td>
+			  <td>{{ company[1] }}</td>
+			  <td>{{ company[2] }}</td>
+			  <td>{{ company[3] }}</td>
+			  <td>{{ company[4] }}</td>
+			  <td><a href="/viewall/?cid={{company[0]}}"><button class="btn-light p-2">Delete</button></a></td>
+				 
+			  </tr>
+		  
+		  {% endfor %}
+		  </table>
+   </div>
+   </body>
+</html>
+

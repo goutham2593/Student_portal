@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   </head>
+   <body>
+	   <div class="w-75 p-3 m-5 mx-auto" style="background-color: beige;">      <p>
+         <h1>{{ msg }}</h1>
+      </p></div>
+	   	   <div class="w-75 p-3 m-2 mx-auto bg-danger">      <p>
+			   <br>
+         <a href="/addrecord"><button class="btn-light p-3 m-2">Add Record</button></a>
+	     <a href="/viewall"><button class="btn-light p-3 m-2">View All Record</button></a>
+		 <a href="/updaterecord"><button class="btn-light p-3 m-2">Update Record</button></a>
+      </p></div>
+      <div class="mx-auto w-75 m-5 bg-light p-5">
+
+      <h2>Add Company Record</h2><br>
+          <form action = "{{ url_for('addrecord') }}" method = "POST">
+         <input class="form-control" type="text" placeholder="Company Name" name ="cname"/><br>
+         <input class="form-control" type="tel" placeholder="Company Phone No." name ="cphone"/><br>
+		 <input class="form-control" type="email" placeholder="Company Email" name ="cemail"/><br>
+		 <input class="form-control" type="text" placeholder="Company Address" name ="caddress"/><br>
+       <button type="submit" class="btn btn-primary m-2 p-2">Add Record</button>
+      </form>
+   </div>
+   </body>
+</html>
+
